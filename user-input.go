@@ -13,6 +13,9 @@ const exactLength = 2
 
 func main() {
 
+	// to run the program, find below example format of what to type in console:
+	// go run <name_of_file>.go 305
+
 	userCollection=make(map[int]string)
 
 	userCollection[305]="Sue"
@@ -45,7 +48,7 @@ func validate()(bool,error){
 		}
 	}
 
-	if len(os.Args) > 2 || len(os.Args) < 2 || isKey==false{
+	if len(os.Args) > exactLength || len(os.Args) < exactLength || isKey==false{
 		err= errors.New("It is either you are passing more than one key or that key is not in our collection\n")
 	} else {
 		err = nil
@@ -56,5 +59,6 @@ func validate()(bool,error){
 
 	return isValid, err
 }
+
 
 
